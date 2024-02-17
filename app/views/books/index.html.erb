@@ -1,4 +1,4 @@
-
+!index! 
 <h1>New book</h1>
 <%= form_with model: @book do |f| %>
   <h4>Title</h4>
@@ -11,8 +11,10 @@
 <% @books.each do |book| %>
   <div>
     <%= image_tag book.get_image %>
-    <p>投稿ユーザー画像：<%= image_tag 'sample-author1.jpg' %></p>
-    <p>ショップ名：<%= book.title %></p>
-    <p>説明：<%= book.bodyn %></p>
+    <p><%= book.title %></p>
+    <p><%= book.body %></p>
   </div>
 <% end %>
+
+<%= link_to books_path(@book.id) do %>
+  <% end %>
