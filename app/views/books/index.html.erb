@@ -11,8 +11,8 @@
 <% @books.each do |book| %>
   <div>
     <%= image_tag book.get_image %>
-    <p><%= book.title %></p>
-    <p><%= book.body %></p>
+    <%= link_to book.title, book_path(current_user) %>
+    <%= book.body %>
   </div>
 <% end %>
 

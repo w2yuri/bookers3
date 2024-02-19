@@ -1,11 +1,31 @@
-
-
 User info（Users一覧）
+
+<div>
+  <h3><%= @user.name %></h3>
+  introduction
+  <%= image_tag @user.get_profile_image(100,100) %>
+  <% if @user == current_user %>
+    <%= link_to edit_user_path(@user) do %>
+      <i class="fa-solid fa-user-gear"></i>
+    <% end %>
+  <% end %>
+</div>
+
+
+
 <h1>New book</h1>
-<%= form_with model: @book do |f| %>
+<%= form_with(model: @book) do |f| %>
   <h4>Title</h4>
   <%= f.text_field :title %>
   <h4>Opinion</h4>
   <%= f.text_area :body %><br>
   <%= f.submit 'Create Book' %>
+<% end %>
+
+<% @users.each do |user| %>
+  <div>
+  　<%= image_tag @user.get_profile_image(100,100) %>
+    <p>ユーザーネーム： <%= user.name %>></p>
+    <p>show<%= link_to user_url_path></p>
+  </div>
 <% end %>

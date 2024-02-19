@@ -1,15 +1,5 @@
 <h1>Book detail</h1>
-<h2>show!!!</h2>
-
-<div>
-  <%= image_tag @book.get_image %>
-  <p>ユーザーネーム：<%= @book.user.name %></p>
-  <p>タイトル　リンク付き</p>
-  <p>opinion<%= @book.body %></p>
-  <% if @book.user == current_user %>
-    <%= link_to "Destroy", books_path(@book), method: :delete %>
-  <% end %></div>
-
+<h2>show</h2>
 
 <h1>New book</h1>
 <%= form_with model: @book do |f| %>
@@ -19,3 +9,16 @@
   <%= f.text_area :body %><br>
   <%= f.submit 'Create Book' %>
 <% end %>
+
+<div>
+  <%= image_tag @book.get_image %>
+  <p><%= link_to @book.user.name, user_path(current_user) %></p>
+  <p><%= link_to @book.title %></p>
+  <p><%= @book.body %></p>
+  <% if @book.user == current_user %>
+  　<%= link_to "Edit", edit_user_path(current_user) %>
+    <%= link_to "Destroy", books_path(@book), method: :delete %>
+  <% end %>
+  
+  
+</div>
