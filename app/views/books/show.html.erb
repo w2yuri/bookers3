@@ -10,9 +10,11 @@
   <p><%= link_to @book.title %></p>
   <p><%= @book.body %></p>
   <% if @book.user == current_user %>
-  　<%= link_to "Edit", edit_book_path %>
-    <%= link_to "Destroy", books_path(@book), method: :delete %>
+  　<%= link_to edit_book_path, method: :get, class: 'btn btn-success' do %>
+  　Edit
+    <% end %>
+    <%= link_to book_path(@book), method: :delete, data: { confirm: "本当に消しますか？" }, class: "btn btn-danger" %>
+　　Destroy
+  　<% end %>
   <% end %>
-  
-  
-</div>
+  </div>

@@ -7,7 +7,7 @@
 
     <label for="inputIntroduction">Introduction</label><br>
     <%= f.text_area :self_introduction, autofocus: true, id: "inputIntroduction", placeholder: "自己紹介" %><br>
-   <%= f.submit "Update User" %>
- <% end %><br>
-
-CopyRight Infratop.inc
+    <%= button_tag(type: 'submit', class: 'btn btn-success') do %>
+    Update User
+　  <% end %>
+ <% end %>
