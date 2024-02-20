@@ -9,7 +9,7 @@ title   opinion
   <div>
     <%= image_tag book.user.get_profile_image(100, 100) %>
     <%= book.user.name %>
-    <%= link_to book.title, book_path(current_user) %>
+    <%= link_to book.title, book_path(book.id) %>
     <%= book.body %>
   </div>
 <% end %>

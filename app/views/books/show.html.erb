@@ -1,19 +1,16 @@
 <h1>Book detail</h1>
-<h2>show</h2>
 
 <%= render partial: 'users/user', locals: { user: @user } %>
 <%= render partial: 'books', locals: { book: @book } %>
 
 <div>
+
   <%= image_tag @book.get_image %>
-  <p><%= link_to @book.user.name, user_path(current_user) %></p>
-  <p><%= link_to @book.title %></p>
+　<p><%= link_to @book.user.name, user_path(@book.user) %></p>
+  <p><%= link_to @book.title, book_path(@book) %></p>
   <p><%= @book.body %></p>
   <% if @book.user == current_user %>
-  <%= link_to edit_book_path, method: :get, class: 'btn btn-success' do %>
-    Edit
-    <% end %>
-    <%= link_to book_path(@book), method: :delete, data: { confirm: "本当に消しますか？" }, class: "btn btn-danger" %>
-    Destroy
+    <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-success' %>
   <% end %>
-  </div>
+  <%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: "本当に消しますか？" }, class: "btn btn-danger" %>
+</div>

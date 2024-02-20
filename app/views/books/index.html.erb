@@ -2,15 +2,5 @@
 <%#= render 'users/user', user: @user %>
 <%= render partial: 'users/user', locals: { user: @user } %>
 <%= render partial: 'books', locals: { book: @book } %>
+<%= render partial: 'index', locals: { books: @books, book: @book, users: @users, user:@user } %>
 
-
-<% @books.each do |book| %>
-  <div>
-    <%= image_tag book.get_image %>
-    <%= link_to book.title, book_path(current_user) %>
-    <%= book.body %>
-  </div>
-<% end %>
-
-<%= link_to books_path(@book.id) do %>
-  <% end %>
