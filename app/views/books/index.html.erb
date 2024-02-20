@@ -1,6 +1,13 @@
-!index!
-<%#= render 'users/user', user: @user %>
-<%= render partial: 'users/user', locals: { user: @user } %>
-<%= render partial: 'books', locals: { book: @book } %>
-<%= render partial: 'index', locals: { books: @books, book: @book, users: @users, user:@user } %>
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-3'>
+     <%#= render 'users/user', user: @user %>
+     <%= render partial: 'users/user', locals: { user: @user } %>
+     <%= render partial: 'books', locals: { book: @book } %>
+    </div>
+  </div>
+ </div>
 
+<div class='col-md-8 offset-md-1'>
+     <%= render partial: 'index', locals: { books: @books, book: @book, users: @users, user:@user } %>
+</div>

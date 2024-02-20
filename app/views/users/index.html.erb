@@ -1,5 +1,12 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <%= render 'user', user: @user %>
+      <%= render partial: 'books/books', locals: { book: @book } %>
+    </div>
+  </div>
+</div>
 
-<%= render 'user', user: @user %>
-<%= render partial: 'books/books', locals: { book: @book } %>
-<%= render partial: 'index', locals: { users: @users, user: @user } %>
-
+<div class='offset-md-1 col-md-8'>
+      <%= render partial: 'index', locals: { users: @users, user: @user } %>
+</div>

@@ -1,8 +1,13 @@
-Books(兼Home)
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <%= render 'user', user: @user %>
+      <%= render partial: 'books/books', locals: { book: @book } %>
+    </div>
+  </div>
+</div>
 
-<%= render 'user', user: @user %>
-<%= render partial: 'books/books', locals: { book: @book } %>
-
+<div class='col-md-8 offset-md-1'>
 <h1>Books</h1>
 title   opinion
 <% @books.each do |book| %>
@@ -13,3 +18,4 @@ title   opinion
     <%= book.body %>
   </div>
 <% end %>
+</div>
