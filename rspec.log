@@ -318,7 +318,7 @@ Failures:
 
   6) [STEP3] 仕上げのテスト 処理失敗時のテスト ユーザのプロフィール情報編集失敗: nameを1文字にする バリデーションエラーが表示される
      [31mFailure/Error: expect(page).to have_content "is too short (minimum is 2 characters)"[0m
-     [31m  expected to find text "is too short (minimum is 2 characters)" in "Bookers Home Users Books Log out\nUser info\nname x\nintroduction fx2hflikz3pr7anmzgb3\nNew book\nTitle\nOpinion\nCreate Book\nfidebo3in6 Show\nt21igyqf6z Show\nCopyRight Infratop.inc"[0m
+     [31m  expected to find text "is too short (minimum is 2 characters)" in "Bookers Home Users Books Log out\nUser info\nname l\nintroduction h09z6haohviqg99adf92\nNew book\nTitle\nOpinion\nCreate Book\nUsers\nimage name duji4zaiv5 Show qip69q97ip Show\nCopyRight Infratop.inc"[0m
      [36m# ./spec/system/03_finishing_touches_spec.rb:116:in `block (4 levels) in <main>'[0m
 
   7) [STEP3] 仕上げのテスト ログインしていない場合のアクセス制限のテスト: アクセスできず、ログイン画面に遷移する ユーザ一覧画面
@@ -326,8 +326,8 @@ Failures:
      [31m[0m
      [31mActionView::Template::Error:[0m
      [31m  undefined method `get_profile_image' for nil:NilClass[0m
-     [36m# ./app/views/users/_user.html.erb:3:in `_app_views_users__user_html_erb__2008444450245098378_24060'[0m
-     [36m# ./app/views/users/index.html.erb:6:in `_app_views_users_index_html_erb__2525797086537713749_27320'[0m
+     [36m# ./app/views/users/_user.html.erb:3:in `_app_views_users__user_html_erb___1535209283246848997_24040'[0m
+     [36m# ./app/views/users/index.html.erb:6:in `_app_views_users_index_html_erb___4207171752967754961_27280'[0m
      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7.6/lib/action_text/rendering.rb:20:in `with_renderer'[0m
      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7.6/lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'[0m
      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/warden-1.2.9/lib/warden/manager.rb:36:in `block in call'[0m
@@ -365,7 +365,7 @@ Failures:
      [36m# --- Caused by: ---[0m
      [36m# NoMethodError:[0m
      [36m#   undefined method `get_profile_image' for nil:NilClass[0m
-     [36m#   ./app/views/users/_user.html.erb:3:in `_app_views_users__user_html_erb__2008444450245098378_24060'[0m
+     [36m#   ./app/views/users/_user.html.erb:3:in `_app_views_users__user_html_erb___1535209283246848997_24040'[0m
 
   8) [STEP3] 仕上げのテスト ログインしていない場合のアクセス制限のテスト: アクセスできず、ログイン画面に遷移する ユーザ詳細画面
      [31mFailure/Error: is_expected.to eq '/users/sign_in'[0m
@@ -378,7 +378,7 @@ Failures:
 
   9) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 他人の名前と紹介文が表示される
      [31mFailure/Error: expect(page).to have_content other_user.introduction[0m
-     [31m  expected to find text "gl15phgt3opdv1bmt81u" in "Bookers Home Users Books Log out\nUser info\nname 2h7ghukd1l\nintroduction dy77zel2cm3sgl6zzjtb\nNew book\nTitle\nOpinion\nCreate Book\nBook detail\n20en1yt3mv l2i3k kuoblhok9pk31aeswrlf\nCopyRight Infratop.inc"[0m
+     [31m  expected to find text "yr6k0fldwyo6x465gwa4" in "Bookers Home Users Books Log out\nUser info\nname 630sf0vhgr\nintroduction 46w513h43am77boewixw\nNew book\nTitle\nOpinion\nCreate Book\nBook detail\nhe86qu5zf3 kbvjg 14q2a6obrxxj4girkqpa\nCopyRight Infratop.inc"[0m
      [36m# ./spec/system/03_finishing_touches_spec.rb:245:in `block (5 levels) in <main>'[0m
 
   10) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 他人のユーザ編集画面へのリンクが存在する
@@ -388,7 +388,7 @@ Failures:
 
   11) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 自分の名前と紹介文は表示されない
       [31mFailure/Error: expect(page).not_to have_content user.name[0m
-      [31m  expected not to find text "p2bay1fma6" in "Bookers Home Users Books Log out\nUser info\nname p2bay1fma6\nintroduction sv4w41yqm3ohkcn90hta\nNew book\nTitle\nOpinion\nCreate Book\nBook detail\ncueo1gqv91 fys8i a7wsoxshl1r6u89b3gvc\nCopyRight Infratop.inc"[0m
+      [31m  expected not to find text "msa6ey1vnq" in "Bookers Home Users Books Log out\nUser info\nname msa6ey1vnq\nintroduction zvm09t00wi2frm3gi77r\nNew book\nTitle\nOpinion\nCreate Book\nBook detail\n5nxs09y8yy gir20 whpsvgnjk2r2dtf0lgcp\nCopyRight Infratop.inc"[0m
       [36m# ./spec/system/03_finishing_touches_spec.rb:251:in `block (5 levels) in <main>'[0m
 
   12) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿編集画面 遷移できず、投稿一覧画面にリダイレクトされる
@@ -419,7 +419,7 @@ Failures:
       [31m  (compared using ==)[0m
       [36m# ./spec/system/03_finishing_touches_spec.rb:318:in `block (4 levels) in <main>'[0m
 
-Finished in 53.72 seconds (files took 1.99 seconds to load)
+Finished in 56.64 seconds (files took 2.78 seconds to load)
 [31m201 examples, 15 failures[0m
 
 Failed examples:

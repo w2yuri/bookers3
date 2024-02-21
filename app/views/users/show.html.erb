@@ -5,17 +5,24 @@
       <%= render partial: 'books/books', locals: { book: @book } %>
     </div>
 
-     <div class='col-md-8 offset-md-1'>
-       <h1>Books</h1>
-       title   opinion
+    <div class='col-md-8 offset-md-1'>
+     <h1>Books</h1>
+      <table class="table table-hover table-inverse">
+      <thead>
+       <tr>
+        <th>Title</th>
+        <th>Opinion</th>
+       </tr>
+      </thead>
+     <tbody>
        <% @books.each do |book| %>
-      <div>
-       <%= image_tag book.user.get_profile_image(100, 100) %>
-       <%= book.user.name %>
-       <%= link_to book.title, book_path(book.id) %>
-       <%= book.body %>
-     </div>
-       <% end %>
-     </div>
-  </div>
+      <tr>
+       <td><%= image_tag book.user.get_profile_image(100, 100) %></td>
+       <td><%= book.user.name %></td>
+       <td><%= link_to book.title, book_path(book.id) %></td>
+       <td><%= book.body %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
