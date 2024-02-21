@@ -1,7 +1,16 @@
 <div class='container'>
   <div class='row'>
     <div class="mx-auto">
-       <h1>Editing Book</h1>
+     <h1>Editing Book</h1>
+      <% if @book.errors.any? %>
+       <h2><%= @book.errors.count %>errors prohibited this obj from<br>
+       being saved:</h2>
+       <ul>
+       <% @book.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+      <% end %>
+       </ul>
+      <% end %>
         <%= form_with model: @book do |f| %>
           <h4>Title</h4>
           <%= f.text_field :title %>
