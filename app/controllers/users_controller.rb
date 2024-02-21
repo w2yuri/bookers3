@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @books = @user.books
+    @book = Book.new
   end
 
  def create
@@ -33,6 +34,7 @@ class UsersController < ApplicationController
     flash[:notiece] = "You have updated user successfully.You have updated user successfully."
     redirect_to user_path(@user.id)
   else
+    @users = User.all
     render:index
   end
   end

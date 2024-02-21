@@ -1,16 +1,21 @@
-<h1>Book detail</h1>
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-3'>
+     <%= render partial: 'users/user', locals: { user: @user } %>
+     <%= render partial: 'books', locals: { book: Book.new } %>
+    </div>
 
-<%= render partial: 'users/user', locals: { user: @user } %>
-<%= render partial: 'books', locals: { book: @book } %>
-
-<div>
-
-  <%= image_tag @book.get_image %>
-　<p><%= link_to @book.user.name, user_path(@book.user) %></p>
-  <p><%= link_to @book.title, book_path(@book) %></p>
-  <p><%= @book.body %></p>
-  <% if @book.user == current_user %>
-    <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-success' %>
-  <% end %>
-  <%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: "本当に消しますか？" }, class: "btn btn-danger" %>
+    <h1>Book detail</h1></br>
+    <div>
+     <%= image_tag @book.get_image %>
+     <%= link_to @book.user.name, user_path(@book.user) %>
+     <%= link_to @book.title, book_path(@book) %>
+     <%= @book.body %>
+       <% if @book.user == current_user %>
+       <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-success' %>
+     <% end %>
+       <%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: "本当に消しますか？" }, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
 </div>

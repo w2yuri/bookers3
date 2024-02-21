@@ -15,9 +15,9 @@
      <%= render partial: 'users/user', locals: { user: @user } %>
      <%= render partial: 'books', locals: { book: @book } %>
     </div>
-  </div>
- </div>
 
-<div class='col-md-8 offset-md-1'>
+    <div class='col-md-8 offset-md-1'>
      <%= render partial: 'index', locals: { books: @books, book: @book, users: @users, user:@user } %>
+    </div>
+  </div>
 </div>
