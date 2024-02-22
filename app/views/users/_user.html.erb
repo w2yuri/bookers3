@@ -1,11 +1,31 @@
-<div>
-  <h3>User info</h3>
-  <%= image_tag user.get_profile_image(100,100) %>
-  <p>name   <%= user.name %></p>
-  <p>introduction    <%= user.introduction %></p>
- 
-  <%= link_to edit_user_path(user), class: "btn btn-light" do %>
-      <i class="fa-solid fa-user-gear"></i>
-    <% end %>
-
-</div>
+<h2>User info</h2>
+<table class="table">
+  <tbody>
+    <tr>
+      <th>
+        <%= image_tag user.get_profile_image(100,100) %>
+      </th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th><%= user.name %></th>
+    </tr>
+    <tr>
+      <th>Introduction</th>
+      <th><%= user.introduction %></th>
+    </tr>
+    <tr>
+      <th>
+      <% if current_user == user %>
+          <%= link_to edit_user_path(user), class: "btn btn-light" do %>
+          <i class="fa-solid fa-user-gear"></i>
+          <% end %>
+         <% else %>
+          <%= link_to edit_user_path(user), class: "btn btn-light" do %>
+          <i class="fa-solid fa-user-gear"></i>
+          <% end %>
+          <% end %>
+      </th>
+    </tr>
+  </tbody>
+</table>

@@ -11,9 +11,11 @@
   		  <tbody><tr>
           <td>
        <h1>Book detail</h1></br>
-       <div>
-     <%= image_tag @book.get_image %>
-     <%= link_to @book.user.name, user_path(@book.user) %>
+    <div>
+     <%= link_to(user_path(@book.user)) do %>
+     <%= image_tag(@book.get_image) %><br>
+     <%= @book.user.name %>
+     <% end %>
      <%= link_to @book.title, book_path(@book) %>
      <%= @book.body %>
        <% if @book.user == current_user %>
