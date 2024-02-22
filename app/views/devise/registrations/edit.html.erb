@@ -1,5 +1,25 @@
 <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
-     
+      <h2>Log in</h2>
+      <form action="/users/sign_in" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="B_hANERjIflamNkpSRwyWJrKy7sdWDJWLyMLIyrtvoARsz_5bzbCNBU1G6IYxT75ohIbJ4tXn3AGSE3-wOddyQ" autocomplete="off">
+        <div class="field">
+          <label for="user_name">Name</label><br>
+          <input autofocus="autofocus" class="name" type="text" name="user[name]" id="user_name">
+        </div>
+        <div class="field">
+          <label for="user_password">Password</label><br>
+          <input autocomplete="off" class="password" type="password" name="user[password]" id="user_password">
+        </div>
+          <div class="field">
+            <input name="user[remember_me]" type="hidden" value="0" autocomplete="off"><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me">
+            <label for="user_remember_me">Remember me</label>
+          </div>
+        <div class="actions">
+          <input type="submit" name="commit" value="Log in" class="btn btn-sm btn-primary" data-disable-with="Log in">
+        </div>
+</form>      
+  <a href="/users/sign_up">Sign up</a><br>
+
+  <a href="/users/password/new">Forgot your password?</a><br>
 
 
 

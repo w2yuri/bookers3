@@ -3,10 +3,10 @@
     <div class="container">
       <div class="collapse navbar-collapse justify-content-end">
         <ul class="navbar-nav ml-auto">
-          <% if user_signed_in? %>
-          <li class="nav-item">
-           <%= link_to "Bookers", root_path, class: "nav-link text-light ml-auto" %>
-           </li>
+  　　　　　　<% if user_signed_in? %>
+   　　　　　　 <li class="nav-item">
+    　　　　  <%= link_to "Bookers", root_path, class: "nav-link text-light ml-auto" %>
+   　　　　　　 </li>
        <li class="nav-item">
         <%= link_to user_path(current_user), class: "nav-link text-light" do %>
         <i class="fa-solid fa-house"></i>
