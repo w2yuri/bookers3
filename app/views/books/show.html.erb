@@ -7,8 +7,11 @@
     </div>
 
     <div class='col-md-8 offset-md-1'>
-    <h1>Book detail</h1></br>
-    <div>
+        <table class="table">
+  		  <tbody><tr>
+          <td>
+       <h1>Book detail</h1></br>
+       <div>
      <%= image_tag @book.get_image %>
      <%= link_to @book.user.name, user_path(@book.user) %>
      <%= link_to @book.title, book_path(@book) %>
