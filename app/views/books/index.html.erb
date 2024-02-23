@@ -9,7 +9,6 @@
       <% end %>
       </ul>
      <% end %>
-     <%#= render 'users/user', user: @user %>
      <%= render partial: 'users/user', locals: { user: @user } %>
      <%= render partial: 'books', locals: { book: @book } %>
     </div>
