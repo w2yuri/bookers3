@@ -4,8 +4,8 @@
     <%= book.favorites.count %> いいね
   <% end %>
 <% else %>
-  <%= link_to favorites_path(book_id: book.id), method: :post do %>
-  <i class="fas fa-heart" aria-hidden="true"></i>
-  <%= book.favorites.count %> いいね
+  <%= link_to book_favorites_path(book), method: :post do %>
+    <i class="fas fa-heart" aria-hidden="true"></i>
+    <%= book.favorites.count %> いいね
   <% end %>
 <% end %>
