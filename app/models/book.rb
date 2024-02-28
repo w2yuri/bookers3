@@ -1,8 +1,9 @@
 class Book < ApplicationRecord
   has_one_attached :image
   belongs_to :user
-  
+
   has_many :favorites, dependent: :destroy
+  has_many :book_comments, dependent: :destroy
 
   validates :title, presence: true
   validates :body,  length: { maximum: 200 },presence: true
@@ -16,8 +17,12 @@ class Book < ApplicationRecord
     image
    end
    
+   def book_comment_count
+    self.book_comments.count
+   end
+
    def favorited_by?(user)
    favorites.exists?(user_id: user.id)
    end
-   
+
 end
