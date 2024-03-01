@@ -16,7 +16,7 @@ class Book < ApplicationRecord
     end
     image
    end
-   
+
    def book_comment_count
     self.book_comments.count
    end
@@ -25,4 +25,15 @@ class Book < ApplicationRecord
    favorites.exists?(user_id: user.id)
    end
 
-end
+   def self.search_for(content, method)
+     if method == 'perfect'
+       Book.where(title: content)
+     elsif method == 'forward'
+      Book.where('name LIKE ?', content + '%')
+     elsif method == 'backward'
+      Book.where('name LIKE ?', '%' + content)
+     else
+      Book.where('name LIKE ?', '%' + content + '%')
+     end
+   end 
+end 
